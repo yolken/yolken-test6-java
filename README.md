@@ -1,27 +1,27 @@
 # Yolken Test6 Java API Library
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.configure_me_yolken_test6.api/yolken-test6-java)](https://central.sonatype.com/artifact/com.configure_me_yolken_test6.api/yolken-test6-java/0.0.1)
-[![javadoc](https://javadoc.io/badge2/com.configure_me_yolken_test6.api/yolken-test6-java/0.0.1/javadoc.svg)](https://javadoc.io/doc/com.configure_me_yolken_test6.api/yolken-test6-java/0.0.1)
+[![Maven Central](https://img.shields.io/maven-central/v/com.yolken.api/yolken-test6-java)](https://central.sonatype.com/artifact/com.yolken.api/yolken-test6-java/0.0.1)
+[![javadoc](https://javadoc.io/badge2/com.yolken.api/yolken-test6-java/0.0.1/javadoc.svg)](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.0.1)
 
 The Yolken Test6 Java SDK provides convenient access to the Yolken Test6 REST API from applications written in Java.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
-Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.configure_me_yolken_test6.api/yolken-test6-java/0.0.1).
+Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.0.1).
 
 ## Installation
 
 ### Gradle
 
 ```kotlin
-implementation("com.CONFIGURE_ME_yolken_test6.api:yolken-test6-java:0.0.1")
+implementation("com.yolken.api:yolken-test6-java:0.0.1")
 ```
 
 ### Maven
 
 ```xml
 <dependency>
-  <groupId>com.CONFIGURE_ME_yolken_test6.api</groupId>
+  <groupId>com.yolken.api</groupId>
   <artifactId>yolken-test6-java</artifactId>
   <version>0.0.1</version>
 </dependency>
@@ -34,10 +34,10 @@ This library requires Java 8 or later.
 ## Usage
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
-import com.configure_me_yolken_test6.api.models.Order;
-import com.configure_me_yolken_test6.api.models.store.orders.OrderCreateParams;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.models.Order;
+import com.yolken.api.models.store.orders.OrderCreateParams;
 
 // Configures using the `yolkentest6.petstoreApiKey` and `yolkentest6.baseUrl` system properties
 // Or configures using the `PETSTORE_API_KEY` and `YOLKEN_TEST6_BASE_URL` environment variables
@@ -51,8 +51,8 @@ Order order = client.store().orders().create();
 Configure the client using system properties or environment variables:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 
 // Configures using the `yolkentest6.petstoreApiKey` and `yolkentest6.baseUrl` system properties
 // Or configures using the `PETSTORE_API_KEY` and `YOLKEN_TEST6_BASE_URL` environment variables
@@ -62,8 +62,8 @@ YolkenTest6Client client = YolkenTest6OkHttpClient.fromEnv();
 Or manually:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 
 YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
     .apiKey("My API Key")
@@ -73,8 +73,8 @@ YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
 Or using a combination of the two approaches:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 
 YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
     // Configures using the `yolkentest6.petstoreApiKey` and `yolkentest6.baseUrl` system properties
@@ -102,7 +102,7 @@ System properties take precedence over environment variables.
 To temporarily use a modified client configuration, while reusing the same connection and thread pools, call `withOptions()` on any client or service:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
+import com.yolken.api.client.YolkenTest6Client;
 
 YolkenTest6Client clientWithOptions = client.withOptions(optionsBuilder -> {
     optionsBuilder.baseUrl("https://example.com");
@@ -131,10 +131,10 @@ Because each class is immutable, builder modification will _never_ affect alread
 The default client is synchronous. To switch to asynchronous execution, call the `async()` method:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
-import com.configure_me_yolken_test6.api.models.Order;
-import com.configure_me_yolken_test6.api.models.store.orders.OrderCreateParams;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.models.Order;
+import com.yolken.api.models.store.orders.OrderCreateParams;
 import java.util.concurrent.CompletableFuture;
 
 // Configures using the `yolkentest6.petstoreApiKey` and `yolkentest6.baseUrl` system properties
@@ -147,10 +147,10 @@ CompletableFuture<Order> order = client.async().store().orders().create();
 Or create an asynchronous client from the beginning:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6ClientAsync;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClientAsync;
-import com.configure_me_yolken_test6.api.models.Order;
-import com.configure_me_yolken_test6.api.models.store.orders.OrderCreateParams;
+import com.yolken.api.client.YolkenTest6ClientAsync;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClientAsync;
+import com.yolken.api.models.Order;
+import com.yolken.api.models.store.orders.OrderCreateParams;
 import java.util.concurrent.CompletableFuture;
 
 // Configures using the `yolkentest6.petstoreApiKey` and `yolkentest6.baseUrl` system properties
@@ -169,10 +169,10 @@ The SDK defines methods that deserialize responses into instances of Java classe
 To access this data, prefix any HTTP method call on a client or service with `withRawResponse()`:
 
 ```java
-import com.configure_me_yolken_test6.api.core.http.Headers;
-import com.configure_me_yolken_test6.api.core.http.HttpResponseFor;
-import com.configure_me_yolken_test6.api.models.store.StoreListInventoryParams;
-import com.configure_me_yolken_test6.api.models.store.StoreListInventoryResponse;
+import com.yolken.api.core.http.Headers;
+import com.yolken.api.core.http.HttpResponseFor;
+import com.yolken.api.models.store.StoreListInventoryParams;
+import com.yolken.api.models.store.StoreListInventoryResponse;
 
 HttpResponseFor<StoreListInventoryResponse> response = client.store().withRawResponse().listInventory();
 
@@ -183,7 +183,7 @@ Headers headers = response.headers();
 You can still deserialize the response into an instance of a Java class if needed:
 
 ```java
-import com.configure_me_yolken_test6.api.models.store.StoreListInventoryResponse;
+import com.yolken.api.models.store.StoreListInventoryResponse;
 
 StoreListInventoryResponse parsedResponse = response.parse();
 ```
@@ -192,26 +192,26 @@ StoreListInventoryResponse parsedResponse = response.parse();
 
 The SDK throws custom unchecked exception types:
 
-- [`YolkenTest6ServiceException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/YolkenTest6ServiceException.kt): Base class for HTTP errors. See this table for which exception subclass is thrown for each HTTP status code:
+- [`YolkenTest6ServiceException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/YolkenTest6ServiceException.kt): Base class for HTTP errors. See this table for which exception subclass is thrown for each HTTP status code:
 
-  | Status | Exception                                                                                                                                           |
-  | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | 400    | [`BadRequestException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/BadRequestException.kt)                     |
-  | 401    | [`UnauthorizedException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/UnauthorizedException.kt)                 |
-  | 403    | [`PermissionDeniedException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/PermissionDeniedException.kt)         |
-  | 404    | [`NotFoundException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/NotFoundException.kt)                         |
-  | 422    | [`UnprocessableEntityException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/UnprocessableEntityException.kt)   |
-  | 429    | [`RateLimitException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/RateLimitException.kt)                       |
-  | 5xx    | [`InternalServerException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/InternalServerException.kt)             |
-  | others | [`UnexpectedStatusCodeException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/UnexpectedStatusCodeException.kt) |
+  | Status | Exception                                                                                                                        |
+  | ------ | -------------------------------------------------------------------------------------------------------------------------------- |
+  | 400    | [`BadRequestException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/BadRequestException.kt)                     |
+  | 401    | [`UnauthorizedException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/UnauthorizedException.kt)                 |
+  | 403    | [`PermissionDeniedException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/PermissionDeniedException.kt)         |
+  | 404    | [`NotFoundException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/NotFoundException.kt)                         |
+  | 422    | [`UnprocessableEntityException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/UnprocessableEntityException.kt)   |
+  | 429    | [`RateLimitException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/RateLimitException.kt)                       |
+  | 5xx    | [`InternalServerException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/InternalServerException.kt)             |
+  | others | [`UnexpectedStatusCodeException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/UnexpectedStatusCodeException.kt) |
 
-- [`YolkenTest6IoException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/YolkenTest6IoException.kt): I/O networking errors.
+- [`YolkenTest6IoException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/YolkenTest6IoException.kt): I/O networking errors.
 
-- [`YolkenTest6RetryableException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/YolkenTest6RetryableException.kt): Generic error indicating a failure that could be retried by the client.
+- [`YolkenTest6RetryableException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/YolkenTest6RetryableException.kt): Generic error indicating a failure that could be retried by the client.
 
-- [`YolkenTest6InvalidDataException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/YolkenTest6InvalidDataException.kt): Failure to interpret successfully parsed data. For example, when accessing a property that's supposed to be required, but the API unexpectedly omitted it from the response.
+- [`YolkenTest6InvalidDataException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/YolkenTest6InvalidDataException.kt): Failure to interpret successfully parsed data. For example, when accessing a property that's supposed to be required, but the API unexpectedly omitted it from the response.
 
-- [`YolkenTest6Exception`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/YolkenTest6Exception.kt): Base class for all exceptions. Most errors will result in one of the previously mentioned ones, but completely generic errors may be thrown using the base class.
+- [`YolkenTest6Exception`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/YolkenTest6Exception.kt): Base class for all exceptions. Most errors will result in one of the previously mentioned ones, but completely generic errors may be thrown using the base class.
 
 ## Logging
 
@@ -241,7 +241,7 @@ The SDK depends on [Jackson](https://github.com/FasterXML/jackson) for JSON seri
 
 The SDK throws an exception if it detects an incompatible Jackson version at runtime (e.g. if the default version was overridden in your Maven or Gradle config).
 
-If the SDK threw an exception, but you're _certain_ the version is compatible, then disable the version check using the `checkJacksonVersionCompatibility` on [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClient.kt) or [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt).
+If the SDK threw an exception, but you're _certain_ the version is compatible, then disable the version check using the `checkJacksonVersionCompatibility` on [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClient.kt) or [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt).
 
 > [!CAUTION]
 > We make no guarantee that the SDK works correctly when the Jackson version check is disabled.
@@ -265,8 +265,8 @@ The API may also explicitly instruct the SDK to retry or not retry a request.
 To set a custom number of retries, configure the client using the `maxRetries` method:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 
 YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
     .fromEnv()
@@ -281,7 +281,7 @@ Requests time out after 1 minute by default.
 To set a custom timeout, configure the method call using the `timeout` method:
 
 ```java
-import com.configure_me_yolken_test6.api.models.store.StoreListInventoryResponse;
+import com.yolken.api.models.store.StoreListInventoryResponse;
 
 StoreListInventoryResponse response = client.store().listInventory(RequestOptions.builder().timeout(Duration.ofSeconds(30)).build());
 ```
@@ -289,8 +289,8 @@ StoreListInventoryResponse response = client.store().listInventory(RequestOption
 Or configure the default for all method calls at the client level:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 import java.time.Duration;
 
 YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
@@ -304,8 +304,8 @@ YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
 To route requests through a proxy, configure the client using the `proxy` method:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 
@@ -328,8 +328,8 @@ YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
 To configure how HTTPS connections are secured, configure the client using the `sslSocketFactory`, `trustManager`, and `hostnameVerifier` methods:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 
 YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
     .fromEnv()
@@ -347,10 +347,10 @@ The SDK consists of three artifacts:
 - `yolken-test6-java-core`
   - Contains core SDK logic
   - Does not depend on [OkHttp](https://square.github.io/okhttp)
-  - Exposes [`YolkenTest6Client`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6Client.kt), [`YolkenTest6ClientAsync`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientAsync.kt), [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientImpl.kt), and [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientAsyncImpl.kt), all of which can work with any HTTP client
+  - Exposes [`YolkenTest6Client`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6Client.kt), [`YolkenTest6ClientAsync`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientAsync.kt), [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientImpl.kt), and [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientAsyncImpl.kt), all of which can work with any HTTP client
 - `yolken-test6-java-client-okhttp`
   - Depends on [OkHttp](https://square.github.io/okhttp)
-  - Exposes [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClient.kt) and [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt), which provide a way to construct [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientImpl.kt) and [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientAsyncImpl.kt), respectively, using OkHttp
+  - Exposes [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClient.kt) and [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt), which provide a way to construct [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientImpl.kt) and [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientAsyncImpl.kt), respectively, using OkHttp
 - `yolken-test6-java`
   - Depends on and exposes the APIs of both `yolken-test6-java-core` and `yolken-test6-java-client-okhttp`
   - Does not have its own logic
@@ -365,16 +365,16 @@ This structure allows replacing the SDK's default HTTP client without pulling in
 To use a customized `OkHttpClient`:
 
 1. Replace your [`yolken-test6-java` dependency](#installation) with `yolken-test6-java-core`
-2. Copy `yolken-test6-java-client-okhttp`'s [`OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/OkHttpClient.kt) class into your code and customize it
-3. Construct [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientImpl.kt) or [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientAsyncImpl.kt), similarly to [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClient.kt) or [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt), using your customized client
+2. Copy `yolken-test6-java-client-okhttp`'s [`OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/OkHttpClient.kt) class into your code and customize it
+3. Construct [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientImpl.kt) or [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientAsyncImpl.kt), similarly to [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClient.kt) or [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt), using your customized client
 
 ### Completely custom HTTP client
 
 To use a completely custom HTTP client:
 
 1. Replace your [`yolken-test6-java` dependency](#installation) with `yolken-test6-java-core`
-2. Write a class that implements the [`HttpClient`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/core/http/HttpClient.kt) interface
-3. Construct [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientImpl.kt) or [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/client/YolkenTest6ClientAsyncImpl.kt), similarly to [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClient.kt) or [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/configure_me_yolken_test6/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt), using your new client class
+2. Write a class that implements the [`HttpClient`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/core/http/HttpClient.kt) interface
+3. Construct [`YolkenTest6ClientImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientImpl.kt) or [`YolkenTest6ClientAsyncImpl`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/client/YolkenTest6ClientAsyncImpl.kt), similarly to [`YolkenTest6OkHttpClient`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClient.kt) or [`YolkenTest6OkHttpClientAsync`](yolken-test6-java-client-okhttp/src/main/kotlin/com/yolken/api/client/okhttp/YolkenTest6OkHttpClientAsync.kt), using your new client class
 
 ## Undocumented API functionality
 
@@ -385,8 +385,8 @@ The SDK is typed for convenient usage of the documented API. However, it also su
 To set undocumented parameters, call the `putAdditionalHeader`, `putAdditionalQueryParam`, or `putAdditionalBodyProperty` methods on any `Params` class:
 
 ```java
-import com.configure_me_yolken_test6.api.core.JsonValue;
-import com.configure_me_yolken_test6.api.models.store.orders.OrderCreateParams;
+import com.yolken.api.core.JsonValue;
+import com.yolken.api.models.store.orders.OrderCreateParams;
 
 OrderCreateParams params = OrderCreateParams.builder()
     .putAdditionalHeader("Secret-Header", "42")
@@ -397,18 +397,18 @@ OrderCreateParams params = OrderCreateParams.builder()
 
 These can be accessed on the built object later using the `_additionalHeaders()`, `_additionalQueryParams()`, and `_additionalBodyProperties()` methods.
 
-To set a documented parameter or property to an undocumented or not yet supported _value_, pass a [`JsonValue`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/core/Values.kt) object to its setter:
+To set a documented parameter or property to an undocumented or not yet supported _value_, pass a [`JsonValue`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/core/Values.kt) object to its setter:
 
 ```java
-import com.configure_me_yolken_test6.api.models.store.orders.OrderCreateParams;
+import com.yolken.api.models.store.orders.OrderCreateParams;
 
 OrderCreateParams params = OrderCreateParams.builder().build();
 ```
 
-The most straightforward way to create a [`JsonValue`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/core/Values.kt) is using its `from(...)` method:
+The most straightforward way to create a [`JsonValue`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/core/Values.kt) is using its `from(...)` method:
 
 ```java
-import com.configure_me_yolken_test6.api.core.JsonValue;
+import com.yolken.api.core.JsonValue;
 import java.util.List;
 import java.util.Map;
 
@@ -446,13 +446,13 @@ JsonValue complexValue = JsonValue.from(Map.of(
 
 Normally a `Builder` class's `build` method will throw [`IllegalStateException`](https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html) if any required parameter or property is unset.
 
-To forcibly omit a required parameter or property, pass [`JsonMissing`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/core/Values.kt):
+To forcibly omit a required parameter or property, pass [`JsonMissing`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/core/Values.kt):
 
 ```java
-import com.configure_me_yolken_test6.api.core.JsonMissing;
-import com.configure_me_yolken_test6.api.models.pets.Pet;
-import com.configure_me_yolken_test6.api.models.pets.PetCreateParams;
-import com.configure_me_yolken_test6.api.models.store.orders.OrderCreateParams;
+import com.yolken.api.core.JsonMissing;
+import com.yolken.api.models.pets.Pet;
+import com.yolken.api.models.pets.PetCreateParams;
+import com.yolken.api.models.store.orders.OrderCreateParams;
 
 OrderCreateParams params = PetCreateParams.builder()
     .pet(Pet.builder()
@@ -468,7 +468,7 @@ OrderCreateParams params = PetCreateParams.builder()
 To access undocumented response properties, call the `_additionalProperties()` method:
 
 ```java
-import com.configure_me_yolken_test6.api.core.JsonValue;
+import com.yolken.api.core.JsonValue;
 import java.util.Map;
 
 Map<String, JsonValue> additionalProperties = client.store().orders().create(params)._additionalProperties();
@@ -498,7 +498,7 @@ String result = secretPropertyValue.accept(new JsonValue.Visitor<>() {
 To access a property's raw JSON value, which may be undocumented, call its `_` prefixed method:
 
 ```java
-import com.configure_me_yolken_test6.api.core.JsonField;
+import com.yolken.api.core.JsonField;
 import java.util.Optional;
 
 JsonField<Object> field = client.store().orders().create(params)._field();
@@ -521,12 +521,12 @@ if (field.isMissing()) {
 
 In rare cases, the API may return a response that doesn't match the expected type. For example, the SDK may expect a property to contain a `String`, but the API could return something else.
 
-By default, the SDK will not throw an exception in this case. It will throw [`YolkenTest6InvalidDataException`](yolken-test6-java-core/src/main/kotlin/com/configure_me_yolken_test6/api/errors/YolkenTest6InvalidDataException.kt) only if you directly access the property.
+By default, the SDK will not throw an exception in this case. It will throw [`YolkenTest6InvalidDataException`](yolken-test6-java-core/src/main/kotlin/com/yolken/api/errors/YolkenTest6InvalidDataException.kt) only if you directly access the property.
 
 If you would prefer to check that the response is completely well-typed upfront, then either call `validate()`:
 
 ```java
-import com.configure_me_yolken_test6.api.models.Order;
+import com.yolken.api.models.Order;
 
 Order order = client.store().orders().create(params).validate();
 ```
@@ -534,7 +534,7 @@ Order order = client.store().orders().create(params).validate();
 Or configure the method call to validate the response using the `responseValidation` method:
 
 ```java
-import com.configure_me_yolken_test6.api.models.Order;
+import com.yolken.api.models.Order;
 
 Order order = client.store().orders().create(RequestOptions.builder().responseValidation(true).build());
 ```
@@ -542,8 +542,8 @@ Order order = client.store().orders().create(RequestOptions.builder().responseVa
 Or configure the default for all method calls at the client level:
 
 ```java
-import com.configure_me_yolken_test6.api.client.YolkenTest6Client;
-import com.configure_me_yolken_test6.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
 
 YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
     .fromEnv()

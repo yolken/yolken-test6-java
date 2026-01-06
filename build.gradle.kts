@@ -8,7 +8,7 @@ repositories {
 }
 
 allprojects {
-    group = "com.CONFIGURE_ME_yolken_test6.api"
+    group = "com.yolken.api"
     version = "0.0.1"
 }
 

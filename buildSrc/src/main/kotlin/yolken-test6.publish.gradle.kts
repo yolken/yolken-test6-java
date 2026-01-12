@@ -31,7 +31,7 @@ configure<MavenPublishBaseExtension> {
     pom {
         name.set("OpenAPI 3.0 Pet Store")
         description.set("This is a sample Pet Store Server based on the OpenAPI 3.0 specification.")
-        url.set("https://www.github.com/yolken/yolken-test6-java")
+        url.set("http://example.com")
 
         licenses {
             license {

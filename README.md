@@ -7,13 +7,13 @@
 
 <!-- x-release-please-end -->
 
-The Yolken Test6 Java SDK provides convenient access to the [Yolken Test6 REST API](http://example7.com) from applications written in Java.
+The Yolken Test6 Java SDK provides convenient access to the [Yolken Test6 REST API](http://example8.com) from applications written in Java.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
 <!-- x-release-please-start-version -->
 
-The REST API documentation can be found on [example7.com](http://example7.com). Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.3.0).
+The REST API documentation can be found on [example8.com](http://example8.com). Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.3.0).
 
 <!-- x-release-please-end -->
 

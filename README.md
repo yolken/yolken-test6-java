@@ -2,18 +2,18 @@
 
 <!-- x-release-please-start-version -->
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.yolken.api/yolken-test6-java)](https://central.sonatype.com/artifact/com.yolken.api/yolken-test6-java/0.2.0)
-[![javadoc](https://javadoc.io/badge2/com.yolken.api/yolken-test6-java/0.2.0/javadoc.svg)](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.2.0)
+[![Maven Central](https://img.shields.io/maven-central/v/com.yolken.api/yolken-test6-java)](https://central.sonatype.com/artifact/com.yolken.api/yolken-test6-java/0.3.0)
+[![javadoc](https://javadoc.io/badge2/com.yolken.api/yolken-test6-java/0.3.0/javadoc.svg)](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.3.0)
 
 <!-- x-release-please-end -->
 
-The Yolken Test6 Java SDK provides convenient access to the [Yolken Test6 REST API](http://example2.com) from applications written in Java.
+The Yolken Test6 Java SDK provides convenient access to the [Yolken Test6 REST API](http://example4.com) from applications written in Java.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
 <!-- x-release-please-start-version -->
 
-The REST API documentation can be found on [example2.com](http://example2.com). Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.2.0).
+The REST API documentation can be found on [example4.com](http://example4.com). Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.3.0).
 
 <!-- x-release-please-end -->
 
@@ -24,7 +24,7 @@ The REST API documentation can be found on [example2.com](http://example2.com). 
 ### Gradle
 
 ```kotlin
-implementation("com.yolken.api:yolken-test6-java:0.2.0")
+implementation("com.yolken.api:yolken-test6-java:0.3.0")
 ```
 
 ### Maven
@@ -33,7 +33,7 @@ implementation("com.yolken.api:yolken-test6-java:0.2.0")
 <dependency>
   <groupId>com.yolken.api</groupId>
   <artifactId>yolken-test6-java</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 

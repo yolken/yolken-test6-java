@@ -1,58 +1,68 @@
-import com.vanniktech.maven.publish.JavadocJar
-import com.vanniktech.maven.publish.KotlinJvm
-import com.vanniktech.maven.publish.MavenPublishBaseExtension
-import com.vanniktech.maven.publish.SonatypeHost
-
 plugins {
-    id("com.vanniktech.maven.publish")
+    `maven-publish`
+    signing
 }
 
-repositories {
-    gradlePluginPortal()
-    mavenCentral()
-}
+configure<PublishingExtension> {
+    publications {
+        register<MavenPublication>("maven") {
+            from(components["java"])
 
-extra["signingInMemoryKey"] = System.getenv("GPG_SIGNING_KEY")
-extra["signingInMemoryKeyId"] = System.getenv("GPG_SIGNING_KEY_ID")
-extra["signingInMemoryKeyPassword"] = System.getenv("GPG_SIGNING_PASSWORD")
+            pom {
+                name.set("OpenAPI 3.0 Pet Store")
+                description.set("This is a sample Pet Store Server based on the OpenAPI 3.0 specification.")
+                url.set("http://example4.com")
 
-configure<MavenPublishBaseExtension> {
-    signAllPublications()
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+                licenses {
+                    license {
+                        name.set("Apache-2.0")
+                    }
+                }
 
-    coordinates(project.group.toString(), project.name, project.version.toString())
-    configure(
-        KotlinJvm(
-            javadocJar = JavadocJar.Dokka("dokkaJavadoc"),
-            sourcesJar = true,
-        )
-    )
+                developers {
+                    developer {
+                        name.set("Yolken Test6")
+                    }
+                }
 
-    pom {
-        name.set("OpenAPI 3.0 Pet Store")
-        description.set("This is a sample Pet Store Server based on the OpenAPI 3.0 specification.")
-        url.set("http://example2.com")
+                scm {
+                    connection.set("scm:git:git://github.com/yolken/yolken-test6-java.git")
+                    developerConnection.set("scm:git:git://github.com/yolken/yolken-test6-java.git")
+                    url.set("https://github.com/yolken/yolken-test6-java")
+                }
 
-        licenses {
-            license {
-                name.set("Apache-2.0")
+                versionMapping {
+                    allVariants {
+                        fromResolutionResult()
+                    }
+                }
             }
         }
-
-        developers {
-            developer {
-                name.set("Yolken Test6")
+    }
+    repositories {
+        if (project.hasProperty("publishLocal")) {
+            maven {
+                name = "LocalFileSystem"
+                url = uri("${rootProject.layout.buildDirectory.get()}/local-maven-repo")
             }
-        }
-
-        scm {
-            connection.set("scm:git:git://github.com/yolken/yolken-test6-java.git")
-            developerConnection.set("scm:git:git://github.com/yolken/yolken-test6-java.git")
-            url.set("https://github.com/yolken/yolken-test6-java")
         }
     }
 }
 
-tasks.withType<Zip>().configureEach {
-    isZip64 = true
+signing {
+    val signingKeyId = System.getenv("GPG_SIGNING_KEY_ID")?.ifBlank { null }
+    val signingKey = System.getenv("GPG_SIGNING_KEY")?.ifBlank { null }
+    val signingPassword = System.getenv("GPG_SIGNING_PASSWORD")?.ifBlank { null }
+    if (signingKey != null && signingPassword != null) {
+        useInMemoryPgpKeys(
+            signingKeyId,
+            signingKey,
+            signingPassword,
+        )
+        sign(publishing.publications["maven"])
+    }
+}
+
+tasks.named("publish") {
+    dependsOn(":closeAndReleaseSonatypeStagingRepository")
 }

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.0 (2026-01-13)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/yolken/yolken-test6-java/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **api:** manual updates ([1c8fbac](https://github.com/yolken/yolken-test6-java/commit/1c8fbac99617c9bb6bf3f8225605e26f2483209c))
+* **api:** manual updates ([54a85e7](https://github.com/yolken/yolken-test6-java/commit/54a85e75cd5e4e7549340aec0122086e0ba14e73))
+
+
+### Chores
+
+* **internal:** support uploading Maven repo artifacts to stainless package server ([aa86e0f](https://github.com/yolken/yolken-test6-java/commit/aa86e0fe16b00b60eb1d34d38479dca14cd955da))
+
 ## 0.2.0 (2026-01-12)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/yolken/yolken-test6-java/compare/v0.1.0...v0.2.0)

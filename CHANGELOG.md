@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.4.0 (2026-01-15)
+
+Full Changelog: [v0.3.0...v0.4.0](https://github.com/yolken/yolken-test6-java/compare/v0.3.0...v0.4.0)
+
+### Features
+
+* **api:** manual updates ([2282f76](https://github.com/yolken/yolken-test6-java/commit/2282f7641bfe12c298ebb06345132e2314efd69c))
+* **api:** manual updates ([580d9e1](https://github.com/yolken/yolken-test6-java/commit/580d9e12e6e5a232e72d1c6d0890d87c0ee573f5))
+* **api:** manual updates ([f92bf68](https://github.com/yolken/yolken-test6-java/commit/f92bf6864ed4d94d5b3804554b5c741e863cdf0a))
+* **api:** manual updates ([9e3565a](https://github.com/yolken/yolken-test6-java/commit/9e3565a30b02b27ff8e94fb4bc0768aaf5ec9c46))
+
+
+### Chores
+
+* **internal:** clean up maven repo artifact script and add html documentation to repo root ([d14a294](https://github.com/yolken/yolken-test6-java/commit/d14a29486b1436f39bf073b6c8316f65662386e9))
+
 ## 0.3.0 (2026-01-13)
 
 Full Changelog: [v0.2.0...v0.3.0](https://github.com/yolken/yolken-test6-java/compare/v0.2.0...v0.3.0)

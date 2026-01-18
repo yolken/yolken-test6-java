@@ -44,7 +44,7 @@ configure<MavenPublishBaseExtension> {
     pom {
         name.set("OpenAPI 3.0 Pet Store")
         description.set("This is a sample Pet Store Server based on the OpenAPI 3.0 specification.")
-        url.set("http://example9.com")
+        url.set("http://example10.com")
 
         licenses {
             license {

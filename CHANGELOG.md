@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.5.0 (2026-01-18)
+
+Full Changelog: [v0.4.0...v0.5.0](https://github.com/yolken/yolken-test6-java/compare/v0.4.0...v0.5.0)
+
+### Features
+
+* **api:** manual updates ([6489c0d](https://github.com/yolken/yolken-test6-java/commit/6489c0d2a9ea7fe7cfec035cd6ab2fedd4abe9d1))
+* **api:** manual updates ([07a9ab2](https://github.com/yolken/yolken-test6-java/commit/07a9ab271dbefa7e0d6e908d7be3ba108b520ccb))
+* **api:** manual updates ([9ce856d](https://github.com/yolken/yolken-test6-java/commit/9ce856d1d7c836bea3f5ae4b60902386a1d48f41))
+
+
+### Bug Fixes
+
+* **client:** disallow coercion from float to int ([a556012](https://github.com/yolken/yolken-test6-java/commit/a5560120abd9f4b5d6058f4649b8c66750cc0518))
+* **client:** fully respect max retries ([c405350](https://github.com/yolken/yolken-test6-java/commit/c4053503045addae87275fdac6c0fb1dc2e5d204))
+* **client:** send retry count header for max retries 0 ([c405350](https://github.com/yolken/yolken-test6-java/commit/c4053503045addae87275fdac6c0fb1dc2e5d204))
+* date time deserialization leniency ([cc3e920](https://github.com/yolken/yolken-test6-java/commit/cc3e920671fd9543c104264f7040b0bd47af490a))
+
+
+### Chores
+
+* **ci:** upgrade `actions/setup-java` ([d890545](https://github.com/yolken/yolken-test6-java/commit/d89054582873592205050207cc37c273165f9345))
+* **internal:** depend on packages directly in example ([c405350](https://github.com/yolken/yolken-test6-java/commit/c4053503045addae87275fdac6c0fb1dc2e5d204))
+* **internal:** improve maven repo docs ([4ffaff5](https://github.com/yolken/yolken-test6-java/commit/4ffaff5d4026818fcc18376573c8a2cebf09d2cf))
+* **internal:** update `actions/checkout` version ([75fdc86](https://github.com/yolken/yolken-test6-java/commit/75fdc86fd30b837e8fc774ae999fef39a851daac))
+* test on Jackson 2.14.0 to avoid encountering FasterXML/jackson-databind[#3240](https://github.com/yolken/yolken-test6-java/issues/3240) in tests ([cc3e920](https://github.com/yolken/yolken-test6-java/commit/cc3e920671fd9543c104264f7040b0bd47af490a))
+
 ## 0.4.0 (2026-01-15)
 
 Full Changelog: [v0.3.0...v0.4.0](https://github.com/yolken/yolken-test6-java/compare/v0.3.0...v0.4.0)

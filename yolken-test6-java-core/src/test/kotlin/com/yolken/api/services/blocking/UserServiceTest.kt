@@ -5,7 +5,6 @@ package com.yolken.api.services.blocking
 import com.yolken.api.TestServerExtension
 import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient
 import com.yolken.api.models.users.User
-import com.yolken.api.models.users.UserCreateWithListParams
 import com.yolken.api.models.users.UserLoginParams
 import com.yolken.api.models.users.UserUpdateParams
 import org.junit.jupiter.api.Disabled
@@ -111,20 +110,18 @@ internal class UserServiceTest {
 
         val user =
             userService.createWithList(
-                UserCreateWithListParams.builder()
-                    .addItem(
-                        User.builder()
-                            .id(10L)
-                            .email("john@email.com")
-                            .firstName("John")
-                            .lastName("James")
-                            .password("12345")
-                            .phone("12345")
-                            .username("theUser")
-                            .userStatus(1)
-                            .build()
-                    )
-                    .build()
+                listOf(
+                    User.builder()
+                        .id(10L)
+                        .email("john@email.com")
+                        .firstName("John")
+                        .lastName("James")
+                        .password("12345")
+                        .phone("12345")
+                        .username("theUser")
+                        .userStatus(1)
+                        .build()
+                )
             )
 
         user.validate()

@@ -342,6 +342,25 @@ YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
     .build();
 ```
 
+### Connection pooling
+
+To customize the underlying OkHttp connection pool, configure the client using the `maxIdleConnections` and `keepAliveDuration` methods:
+
+```java
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
+import java.time.Duration;
+
+YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
+    .fromEnv()
+    // If `maxIdleConnections` is set, then `keepAliveDuration` must be set, and vice versa.
+    .maxIdleConnections(10)
+    .keepAliveDuration(Duration.ofMinutes(2))
+    .build();
+```
+
+If both options are unset, OkHttp's default connection pool settings are used.
+
 ### HTTPS
 
 > [!NOTE]

@@ -2,25 +2,18 @@
 
 package com.yolken.api.services.blocking.store
 
-import com.yolken.api.TestServerExtension
 import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient
 import com.yolken.api.models.Order
 import java.time.OffsetDateTime
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 
-@ExtendWith(TestServerExtension::class)
 internal class OrderServiceTest {
 
     @Disabled("Prism tests are disabled")
     @Test
     fun create() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val orderService = client.store().orders()
 
         val order =
@@ -41,11 +34,7 @@ internal class OrderServiceTest {
     @Disabled("Prism tests are disabled")
     @Test
     fun retrieve() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val orderService = client.store().orders()
 
         val order = orderService.retrieve(0L)
@@ -56,11 +45,7 @@ internal class OrderServiceTest {
     @Disabled("Prism tests are disabled")
     @Test
     fun delete() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val orderService = client.store().orders()
 
         orderService.delete(0L)

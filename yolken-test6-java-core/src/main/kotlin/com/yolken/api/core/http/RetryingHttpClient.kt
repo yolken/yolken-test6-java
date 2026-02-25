@@ -1,3 +1,5 @@
+// File generated from our OpenAPI spec by Stainless.
+
 package com.yolken.api.core.http
 
 import com.yolken.api.core.DefaultSleeper

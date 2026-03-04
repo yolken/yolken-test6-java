@@ -42,10 +42,13 @@ class YolkenTest6ClientImpl(private val clientOptions: ClientOptions) : YolkenTe
     override fun withOptions(modifier: Consumer<ClientOptions.Builder>): YolkenTest6Client =
         YolkenTest6ClientImpl(clientOptions.toBuilder().apply(modifier::accept).build())
 
+    /** Everything about your Pets */
     override fun pets(): PetService = pets
 
+    /** Access to Petstore orders */
     override fun store(): StoreService = store
 
+    /** Operations about user */
     override fun users(): UserService = users
 
     override fun close() = clientOptions.close()
@@ -72,10 +75,13 @@ class YolkenTest6ClientImpl(private val clientOptions: ClientOptions) : YolkenTe
                 clientOptions.toBuilder().apply(modifier::accept).build()
             )
 
+        /** Everything about your Pets */
         override fun pets(): PetService.WithRawResponse = pets
 
+        /** Access to Petstore orders */
         override fun store(): StoreService.WithRawResponse = store
 
+        /** Operations about user */
         override fun users(): UserService.WithRawResponse = users
     }
 }

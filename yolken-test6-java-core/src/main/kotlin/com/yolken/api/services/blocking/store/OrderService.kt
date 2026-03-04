@@ -13,6 +13,7 @@ import com.yolken.api.models.store.orders.OrderDeleteParams
 import com.yolken.api.models.store.orders.OrderRetrieveParams
 import java.util.function.Consumer
 
+/** Access to Petstore orders */
 interface OrderService {
 
     /**

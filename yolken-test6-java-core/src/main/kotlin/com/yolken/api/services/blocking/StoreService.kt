@@ -11,6 +11,7 @@ import com.yolken.api.models.store.StoreListInventoryResponse
 import com.yolken.api.services.blocking.store.OrderService
 import java.util.function.Consumer
 
+/** Access to Petstore orders */
 interface StoreService {
 
     /**
@@ -25,6 +26,7 @@ interface StoreService {
      */
     fun withOptions(modifier: Consumer<ClientOptions.Builder>): StoreService
 
+    /** Access to Petstore orders */
     fun orders(): OrderService
 
     /** Returns a map of status codes to quantities */
@@ -55,6 +57,7 @@ interface StoreService {
          */
         fun withOptions(modifier: Consumer<ClientOptions.Builder>): StoreService.WithRawResponse
 
+        /** Access to Petstore orders */
         fun orders(): OrderService.WithRawResponse
 
         /**

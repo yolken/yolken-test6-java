@@ -11,6 +11,7 @@ import com.yolken.api.services.async.store.OrderServiceAsync
 import java.util.concurrent.CompletableFuture
 import java.util.function.Consumer
 
+/** Access to Petstore orders */
 interface StoreServiceAsync {
 
     /**
@@ -25,6 +26,7 @@ interface StoreServiceAsync {
      */
     fun withOptions(modifier: Consumer<ClientOptions.Builder>): StoreServiceAsync
 
+    /** Access to Petstore orders */
     fun orders(): OrderServiceAsync
 
     /** Returns a map of status codes to quantities */
@@ -60,6 +62,7 @@ interface StoreServiceAsync {
             modifier: Consumer<ClientOptions.Builder>
         ): StoreServiceAsync.WithRawResponse
 
+        /** Access to Petstore orders */
         fun orders(): OrderServiceAsync.WithRawResponse
 
         /**

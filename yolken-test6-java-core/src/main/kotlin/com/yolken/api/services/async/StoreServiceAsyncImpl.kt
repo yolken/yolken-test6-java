@@ -21,6 +21,7 @@ import com.yolken.api.services.async.store.OrderServiceAsyncImpl
 import java.util.concurrent.CompletableFuture
 import java.util.function.Consumer
 
+/** Access to Petstore orders */
 class StoreServiceAsyncImpl internal constructor(private val clientOptions: ClientOptions) :
     StoreServiceAsync {
 
@@ -35,6 +36,7 @@ class StoreServiceAsyncImpl internal constructor(private val clientOptions: Clie
     override fun withOptions(modifier: Consumer<ClientOptions.Builder>): StoreServiceAsync =
         StoreServiceAsyncImpl(clientOptions.toBuilder().apply(modifier::accept).build())
 
+    /** Access to Petstore orders */
     override fun orders(): OrderServiceAsync = orders
 
     override fun listInventory(
@@ -61,6 +63,7 @@ class StoreServiceAsyncImpl internal constructor(private val clientOptions: Clie
                 clientOptions.toBuilder().apply(modifier::accept).build()
             )
 
+        /** Access to Petstore orders */
         override fun orders(): OrderServiceAsync.WithRawResponse = orders
 
         private val listInventoryHandler: Handler<StoreListInventoryResponse> =

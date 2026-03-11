@@ -55,6 +55,7 @@ configure<MavenPublishBaseExtension> {
         developers {
             developer {
                 name.set("Yolken Test6")
+                email.set("benjamin2@stainless.com")
             }
         }
 

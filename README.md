@@ -236,8 +236,6 @@ The SDK throws custom unchecked exception types:
 
 ## Logging
 
-The SDK uses the standard [OkHttp logging interceptor](https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor).
-
 Enable logging by setting the `YOLKEN_TEST6_LOG` environment variable to `info`:
 
 ```sh
@@ -248,6 +246,19 @@ Or to `debug` for more verbose logging:
 
 ```sh
 export YOLKEN_TEST6_LOG=debug
+```
+
+Or configure the client manually using the `logLevel` method:
+
+```java
+import com.yolken.api.client.YolkenTest6Client;
+import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient;
+import com.yolken.api.core.LogLevel;
+
+YolkenTest6Client client = YolkenTest6OkHttpClient.builder()
+    .fromEnv()
+    .logLevel(LogLevel.INFO)
+    .build();
 ```
 
 ## ProGuard and R8

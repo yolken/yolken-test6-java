@@ -44,7 +44,7 @@ configure<MavenPublishBaseExtension> {
     pom {
         name.set("OpenAPI 3.0 Pet Store")
         description.set("This is a sample Pet Store Server based on the OpenAPI 3.0 specification.")
-        url.set("http://example18.com")
+        url.set("http://example19.com")
 
         licenses {
             license {
@@ -55,7 +55,7 @@ configure<MavenPublishBaseExtension> {
         developers {
             developer {
                 name.set("Yolken Test6")
-                email.set("benjamin3@stainless.com")
+                email.set("benjamin4@stainless.com")
             }
         }
 

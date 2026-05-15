@@ -2,8 +2,8 @@
 
 <!-- x-release-please-start-version -->
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.yolken.api/yolken-test6-java)](https://central.sonatype.com/artifact/com.yolken.api/yolken-test6-java/0.4.0)
-[![javadoc](https://javadoc.io/badge2/com.yolken.api/yolken-test6-java/0.4.0/javadoc.svg)](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.4.0)
+[![Maven Central](https://img.shields.io/maven-central/v/com.yolken.api/yolken-test6-java)](https://central.sonatype.com/artifact/com.yolken.api/yolken-test6-java/0.5.0)
+[![javadoc](https://javadoc.io/badge2/com.yolken.api/yolken-test6-java/0.5.0/javadoc.svg)](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.5.0)
 
 <!-- x-release-please-end -->
 
@@ -22,7 +22,7 @@ Use the Yolken Test6 MCP Server to enable AI assistants to interact with this AP
 
 <!-- x-release-please-start-version -->
 
-The REST API documentation can be found on [example19.com](http://example19.com). Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.4.0).
+The REST API documentation can be found on [example19.com](http://example19.com). Javadocs are available on [javadoc.io](https://javadoc.io/doc/com.yolken.api/yolken-test6-java/0.5.0).
 
 <!-- x-release-please-end -->
 
@@ -33,7 +33,7 @@ The REST API documentation can be found on [example19.com](http://example19.com)
 ### Gradle
 
 ```kotlin
-implementation("com.yolken.api:yolken-test6-java:0.4.0")
+implementation("com.yolken.api:yolken-test6-java:0.5.0")
 ```
 
 ### Maven
@@ -42,7 +42,7 @@ implementation("com.yolken.api:yolken-test6-java:0.4.0")
 <dependency>
   <groupId>com.yolken.api</groupId>
   <artifactId>yolken-test6-java</artifactId>
-  <version>0.4.0</version>
+  <version>0.5.0</version>
 </dependency>
 ```
 

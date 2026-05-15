@@ -17,6 +17,7 @@ import com.yolken.api.models.users.UserUpdateParams
 import java.util.concurrent.CompletableFuture
 import java.util.function.Consumer
 
+/** Operations about user */
 interface UserServiceAsync {
 
     /**
@@ -167,6 +168,17 @@ interface UserServiceAsync {
     fun createWithList(
         params: UserCreateWithListParams = UserCreateWithListParams.none()
     ): CompletableFuture<User> = createWithList(params, RequestOptions.none())
+
+    /** @see createWithList */
+    fun createWithList(
+        items: List<User>,
+        requestOptions: RequestOptions = RequestOptions.none(),
+    ): CompletableFuture<User> =
+        createWithList(UserCreateWithListParams.builder().items(items).build(), requestOptions)
+
+    /** @see createWithList */
+    fun createWithList(items: List<User>): CompletableFuture<User> =
+        createWithList(items, RequestOptions.none())
 
     /** @see createWithList */
     fun createWithList(requestOptions: RequestOptions): CompletableFuture<User> =
@@ -380,6 +392,17 @@ interface UserServiceAsync {
         fun createWithList(
             params: UserCreateWithListParams = UserCreateWithListParams.none()
         ): CompletableFuture<HttpResponseFor<User>> = createWithList(params, RequestOptions.none())
+
+        /** @see createWithList */
+        fun createWithList(
+            items: List<User>,
+            requestOptions: RequestOptions = RequestOptions.none(),
+        ): CompletableFuture<HttpResponseFor<User>> =
+            createWithList(UserCreateWithListParams.builder().items(items).build(), requestOptions)
+
+        /** @see createWithList */
+        fun createWithList(items: List<User>): CompletableFuture<HttpResponseFor<User>> =
+            createWithList(items, RequestOptions.none())
 
         /** @see createWithList */
         fun createWithList(

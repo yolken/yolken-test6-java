@@ -5,6 +5,7 @@ package com.yolken.api.errors
 import com.yolken.api.core.JsonValue
 import com.yolken.api.core.checkRequired
 import com.yolken.api.core.http.Headers
+import com.yolken.api.core.jsonMapper
 import java.util.Optional
 import kotlin.jvm.optionals.getOrNull
 
@@ -14,7 +15,11 @@ private constructor(
     private val headers: Headers,
     private val body: JsonValue,
     cause: Throwable?,
-) : YolkenTest6ServiceException("$statusCode: $body", cause) {
+) :
+    YolkenTest6ServiceException(
+        "$statusCode: ${if (body.isMissing()) "Unknown" else jsonMapper().writeValueAsString(body)}",
+        cause,
+    ) {
 
     override fun statusCode(): Int = statusCode
 

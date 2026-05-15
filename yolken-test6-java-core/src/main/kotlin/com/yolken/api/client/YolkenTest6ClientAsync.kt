@@ -44,10 +44,13 @@ interface YolkenTest6ClientAsync {
      */
     fun withOptions(modifier: Consumer<ClientOptions.Builder>): YolkenTest6ClientAsync
 
+    /** Everything about your Pets */
     fun pets(): PetServiceAsync
 
+    /** Access to Petstore orders */
     fun store(): StoreServiceAsync
 
+    /** Operations about user */
     fun users(): UserServiceAsync
 
     /**
@@ -78,10 +81,13 @@ interface YolkenTest6ClientAsync {
             modifier: Consumer<ClientOptions.Builder>
         ): YolkenTest6ClientAsync.WithRawResponse
 
+        /** Everything about your Pets */
         fun pets(): PetServiceAsync.WithRawResponse
 
+        /** Access to Petstore orders */
         fun store(): StoreServiceAsync.WithRawResponse
 
+        /** Operations about user */
         fun users(): UserServiceAsync.WithRawResponse
     }
 }

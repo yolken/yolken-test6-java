@@ -2,27 +2,19 @@
 
 package com.yolken.api.services.blocking
 
-import com.yolken.api.TestServerExtension
 import com.yolken.api.client.okhttp.YolkenTest6OkHttpClient
 import com.yolken.api.models.users.User
-import com.yolken.api.models.users.UserCreateWithListParams
 import com.yolken.api.models.users.UserLoginParams
 import com.yolken.api.models.users.UserUpdateParams
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 
-@ExtendWith(TestServerExtension::class)
 internal class UserServiceTest {
 
-    @Disabled("Prism tests are disabled")
+    @Disabled("Mock server tests are disabled")
     @Test
     fun create() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val userService = client.users()
 
         val user =
@@ -42,14 +34,10 @@ internal class UserServiceTest {
         user.validate()
     }
 
-    @Disabled("Prism tests are disabled")
+    @Disabled("Mock server tests are disabled")
     @Test
     fun retrieve() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val userService = client.users()
 
         val user = userService.retrieve("username")
@@ -57,14 +45,10 @@ internal class UserServiceTest {
         user.validate()
     }
 
-    @Disabled("Prism tests are disabled")
+    @Disabled("Mock server tests are disabled")
     @Test
     fun update() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val userService = client.users()
 
         userService.update(
@@ -86,58 +70,44 @@ internal class UserServiceTest {
         )
     }
 
-    @Disabled("Prism tests are disabled")
+    @Disabled("Mock server tests are disabled")
     @Test
     fun delete() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val userService = client.users()
 
         userService.delete("username")
     }
 
-    @Disabled("Prism tests are disabled")
+    @Disabled("Mock server tests are disabled")
     @Test
     fun createWithList() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val userService = client.users()
 
         val user =
             userService.createWithList(
-                UserCreateWithListParams.builder()
-                    .addItem(
-                        User.builder()
-                            .id(10L)
-                            .email("john@email.com")
-                            .firstName("John")
-                            .lastName("James")
-                            .password("12345")
-                            .phone("12345")
-                            .username("theUser")
-                            .userStatus(1)
-                            .build()
-                    )
-                    .build()
+                listOf(
+                    User.builder()
+                        .id(10L)
+                        .email("john@email.com")
+                        .firstName("John")
+                        .lastName("James")
+                        .password("12345")
+                        .phone("12345")
+                        .username("theUser")
+                        .userStatus(1)
+                        .build()
+                )
             )
 
         user.validate()
     }
 
-    @Disabled("Prism tests are disabled")
+    @Disabled("Mock server tests are disabled")
     @Test
     fun login() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val userService = client.users()
 
         userService.login(
@@ -145,14 +115,10 @@ internal class UserServiceTest {
         )
     }
 
-    @Disabled("Prism tests are disabled")
+    @Disabled("Mock server tests are disabled")
     @Test
     fun logout() {
-        val client =
-            YolkenTest6OkHttpClient.builder()
-                .baseUrl(TestServerExtension.BASE_URL)
-                .apiKey("My API Key")
-                .build()
+        val client = YolkenTest6OkHttpClient.builder().apiKey("My API Key").build()
         val userService = client.users()
 
         userService.logout()

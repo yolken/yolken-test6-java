@@ -20,6 +20,7 @@ import com.yolken.api.services.blocking.store.OrderService
 import com.yolken.api.services.blocking.store.OrderServiceImpl
 import java.util.function.Consumer
 
+/** Access to Petstore orders */
 class StoreServiceImpl internal constructor(private val clientOptions: ClientOptions) :
     StoreService {
 
@@ -34,6 +35,7 @@ class StoreServiceImpl internal constructor(private val clientOptions: ClientOpt
     override fun withOptions(modifier: Consumer<ClientOptions.Builder>): StoreService =
         StoreServiceImpl(clientOptions.toBuilder().apply(modifier::accept).build())
 
+    /** Access to Petstore orders */
     override fun orders(): OrderService = orders
 
     override fun listInventory(
@@ -60,6 +62,7 @@ class StoreServiceImpl internal constructor(private val clientOptions: ClientOpt
                 clientOptions.toBuilder().apply(modifier::accept).build()
             )
 
+        /** Access to Petstore orders */
         override fun orders(): OrderService.WithRawResponse = orders
 
         private val listInventoryHandler: Handler<StoreListInventoryResponse> =

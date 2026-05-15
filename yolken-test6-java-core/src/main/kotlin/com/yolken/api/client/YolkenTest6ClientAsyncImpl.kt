@@ -45,10 +45,13 @@ class YolkenTest6ClientAsyncImpl(private val clientOptions: ClientOptions) :
     override fun withOptions(modifier: Consumer<ClientOptions.Builder>): YolkenTest6ClientAsync =
         YolkenTest6ClientAsyncImpl(clientOptions.toBuilder().apply(modifier::accept).build())
 
+    /** Everything about your Pets */
     override fun pets(): PetServiceAsync = pets
 
+    /** Access to Petstore orders */
     override fun store(): StoreServiceAsync = store
 
+    /** Operations about user */
     override fun users(): UserServiceAsync = users
 
     override fun close() = clientOptions.close()
@@ -75,10 +78,13 @@ class YolkenTest6ClientAsyncImpl(private val clientOptions: ClientOptions) :
                 clientOptions.toBuilder().apply(modifier::accept).build()
             )
 
+        /** Everything about your Pets */
         override fun pets(): PetServiceAsync.WithRawResponse = pets
 
+        /** Access to Petstore orders */
         override fun store(): StoreServiceAsync.WithRawResponse = store
 
+        /** Operations about user */
         override fun users(): UserServiceAsync.WithRawResponse = users
     }
 }

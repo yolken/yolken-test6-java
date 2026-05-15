@@ -17,6 +17,7 @@ import com.yolken.api.models.users.UserRetrieveParams
 import com.yolken.api.models.users.UserUpdateParams
 import java.util.function.Consumer
 
+/** Operations about user */
 interface UserService {
 
     /**
@@ -142,6 +143,16 @@ interface UserService {
     /** @see createWithList */
     fun createWithList(params: UserCreateWithListParams = UserCreateWithListParams.none()): User =
         createWithList(params, RequestOptions.none())
+
+    /** @see createWithList */
+    fun createWithList(
+        items: List<User>,
+        requestOptions: RequestOptions = RequestOptions.none(),
+    ): User =
+        createWithList(UserCreateWithListParams.builder().items(items).build(), requestOptions)
+
+    /** @see createWithList */
+    fun createWithList(items: List<User>): User = createWithList(items, RequestOptions.none())
 
     /** @see createWithList */
     fun createWithList(requestOptions: RequestOptions): User =
@@ -364,6 +375,19 @@ interface UserService {
         fun createWithList(
             params: UserCreateWithListParams = UserCreateWithListParams.none()
         ): HttpResponseFor<User> = createWithList(params, RequestOptions.none())
+
+        /** @see createWithList */
+        @MustBeClosed
+        fun createWithList(
+            items: List<User>,
+            requestOptions: RequestOptions = RequestOptions.none(),
+        ): HttpResponseFor<User> =
+            createWithList(UserCreateWithListParams.builder().items(items).build(), requestOptions)
+
+        /** @see createWithList */
+        @MustBeClosed
+        fun createWithList(items: List<User>): HttpResponseFor<User> =
+            createWithList(items, RequestOptions.none())
 
         /** @see createWithList */
         @MustBeClosed
